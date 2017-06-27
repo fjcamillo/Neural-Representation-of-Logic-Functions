@@ -3,7 +3,8 @@ from functools import reduce
 
 
 def perceptron(weight, bias, x):
-    logit = np.sum(np.add(np.dot(x, weight), bias))
+    model = np.sum(np.add(np.dot(x, weight), bias))
+    logit = 1/1+np.exp(model)
     return logit
 
 def main():
