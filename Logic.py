@@ -16,10 +16,11 @@ def main():
         'logic_or': {
             'w1': ,
             'w2': ,
-        }
+        },
         'logic_not': {
             'w1': ,
-        }
+        },
+        'bias': 1
     }
     dataset = np.array([
         [0,0],
@@ -27,6 +28,10 @@ def main():
         [1,0],
         [1,1]
     ])
+    
+    #Logic AND
+    weights = np.array([logic['logic_and']])
+    neuron = perceptron(weights, logic['bias'], dataset)
     
 
 if __name__ == '__main__':
