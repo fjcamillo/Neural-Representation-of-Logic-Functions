@@ -20,12 +20,12 @@ def main():
             'w1': ,
         }
     }
-    dataset = np.array(
+    dataset = np.array([
         [0,0],
         [0,1],
         [1,0],
         [1,1]
-    )
+    ])
     
 
 if __name__ == '__main__':
