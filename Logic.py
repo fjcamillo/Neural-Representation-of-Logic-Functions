@@ -32,6 +32,11 @@ def main():
     #Logic AND
     weights = np.array([logic['logic_and']])
     neuron = perceptron(weights, logic['bias'], dataset)
+    print(f'Logic AND \n weights: {weights}, logit: {logit}')
+    #Logic OR
+    weights = np.array([logic['logic_or']])
+    neuron = perceptron(weights, logic['bias'], dataset)
+    
     
 
 if __name__ == '__main__':
