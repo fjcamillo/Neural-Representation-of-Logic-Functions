@@ -10,15 +10,15 @@ def perceptron(weight, bias, x):
 def main():
     logic = {
         'logic_and' : {
-            'w1': ,
-            'w2': ,
+            'w1': -20,
+            'w2': 10,
         },
         'logic_or': {
-            'w1': ,
-            'w2': ,
+            'w1': 20,
+            'w2': 10,
         },
         'logic_not': {
-            'w1': ,
+            'w1': 10,
         },
         'bias': 1
     }
@@ -28,16 +28,17 @@ def main():
         [1,0],
         [1,1]
     ])
-    
+
     #Logic AND
-    weights = np.array([logic['logic_and']])
+    weights = np.array([logic['logic_and']['w1'],logic['logic_and']['w2']])
+    print(weights)
     neuron = perceptron(weights, logic['bias'], dataset)
-    print(f'Logic AND \n weights: {weights}, logit: {logit}')
+    print(neuron)
     #Logic OR
-    weights = np.array([logic['logic_or']])
-    neuron = perceptron(weights, logic['bias'], dataset)
-    
-    
+    # weights = np.array([logic['logic_or']])
+    # neuron = perceptron(weights, logic['bias'], dataset)
+
+
 
 if __name__ == '__main__':
     main()
