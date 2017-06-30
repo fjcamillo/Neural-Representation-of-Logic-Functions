@@ -44,9 +44,18 @@ def main():
     1 1 \t {}
     """.format(first, second, third, fourth))
     #Logic OR
-    # weights = np.array([logic['logic_or']])
-    # neuron = perceptron(weights, logic['bias'], dataset)
-
+    weights = np.array([logic['logic_or']['w1'],logic['logic_or']['w2']])
+    first = perceptron(weights, logic['bias'], dataset[0])
+    second = perceptron(weights, logic['bias'], dataset[1])
+    third = perceptron(weights, logic['bias'], dataset[2])
+    fourth = perceptron(weights, logic['bias'], dataset[3])
+    print("""
+    Logic OR:
+    0 0 \t {}
+    0 1 \t {}
+    1 0 \t {}
+    1 1 \t {}
+    """.format(first, second, third, fourth))
 
 
 if __name__ == '__main__':
