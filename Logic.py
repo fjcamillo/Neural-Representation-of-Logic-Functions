@@ -11,23 +11,26 @@ def perceptron(weight, bias, x):
 def main():
     logic = {
         'logic_and' : {
+            'w0': -5,
             'w1': -20,
-            'w2': 10,
+            'w2': 10
         },
         'logic_or': {
+            'w0': -5,
             'w1': 20,
-            'w2': 10,
+            'w2': 10
         },
         'logic_not': {
-            'w1': 10,
+            'w0': 10,
+            'w1': 10
         },
         'bias': 1
     }
     dataset = np.array([
-        [0,0],
-        [0,1],
-        [1,0],
-        [1,1]
+        [1,0,0],
+        [1,0,1],
+        [1,1,0],
+        [1,1,1]
     ])
 
     #Logic AND
