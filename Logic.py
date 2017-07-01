@@ -8,16 +8,16 @@ def perceptron(weight, bias, x):
     return logit
 
 def compute(logictype, weightdict, dataset):
-    weights = np.array([ w for w in weightdict[logictype].keys()])
+    weights = np.array([ weightdict[logictype][w] for w in weightdict[logictype].keys()])
     output = np.array([ perceptron(weights, weightdict['bias'][logictype], val) for val in dataset])
-    return output
+    return output, logictype
 
 def main():
     logic = {
         'logic_and' : {
             'w0': -5,
-            'w1': -20,
-            'w2': 10
+            'w1': 5,
+            'w2': 4
         },
         'logic_or': {
             'w0': -5,
@@ -47,9 +47,9 @@ def main():
             'w0': -5,
             'w1': 20,
             'w2': 10
-        }
+        },
         'bias': {
-            'logic_and': 1,
+            'logic_and': -1,
             'logic_or': 1,
             'logic_not': 1,
             'logic_xor': 1,
@@ -69,7 +69,13 @@ def main():
     logic_or = compute('logic_or', logic, dataset)
     logic_xor = compute('logic_xor', logic, dataset)
     logic_not = compute('logic_not', logic, [[1,0],[1,1]])
-    print logic_and
+    logic_xnor = compute('logic_xnor', logic, dataset)
+    logic_nand = compute('logic_nand', logic, dataset)
+    logic_nor = compute('logic_nor', logic, dataset)
+
+    def template(data, name):
+        print("Logic Function: {}".format(name[6:]))
+
     # print("""
     # Logic XOR:
     # 0 0 \t {}
