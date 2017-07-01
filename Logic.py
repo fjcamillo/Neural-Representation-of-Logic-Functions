@@ -68,18 +68,15 @@ def main():
     logic_and = compute('logic_and', logic, dataset)
     logic_or = compute('logic_or', logic, dataset)
     logic_xor = compute('logic_xor', logic, dataset)
-    print("""
-    Logic XOR:
-    0 0 \t {}
-    0 1 \t {}
-    1 0 \t {}
-    1 1 \t {}
-    """.format(*Logic_xor)
-    
-    logic_not = compute('logic_not')
-
-
-
+    logic_not = compute('logic_not', logic, [[1,0],[1,1]])
+    print logic_and
+    # print("""
+    # Logic XOR:
+    # 0 0 \t {}
+    # 0 1 \t {}
+    # 1 0 \t {}
+    # 1 1 \t {}
+    # """.format(*Logic_xor)
 
 if __name__ == '__main__':
     main()
