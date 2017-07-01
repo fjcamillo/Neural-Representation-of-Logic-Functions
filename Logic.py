@@ -77,7 +77,7 @@ def main():
 
     def template(dataset, name, data):
         # act = name[6:]
-        print("Logic Function: {}".format(name[6:]))
+        print("Logic Function: {}".format(name[6:].upper()))
         print("X0\tX1\tX2\tY")
         toPrint = ["{1}\t{2}\t{3}\t{0}".format(output, *datas) for datas, output in zip(dataset, data)]
         for i in toPrint:
