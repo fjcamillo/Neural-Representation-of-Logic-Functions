@@ -43,7 +43,7 @@ def main():
             'w1': 20,
             'w2': 10
         }
-        'bias': 1
+        'bias': [1, 1, 1, 1, 1, 1]
     }
     dataset = np.array([
         [1,0,0],
@@ -54,10 +54,10 @@ def main():
 
     #Logic AND
     weights = np.array([logic['logic_and'][w] for w in logic['logic_and'].keys()])
-    first = perceptron(weights, logic['bias'], dataset[0])
-    second = perceptron(weights, logic['bias'], dataset[1])
-    third = perceptron(weights, logic['bias'], dataset[2])
-    fourth = perceptron(weights, logic['bias'], dataset[3])
+    first = perceptron(weights, logic['bias'][0], dataset[0])
+    second = perceptron(weights, logic['bias'][0], dataset[1])
+    third = perceptron(weights, logic['bias'][0], dataset[2])
+    fourth = perceptron(weights, logic['bias'][0], dataset[3])
     print("""
     Logic AND:
     0 0 \t {}
@@ -67,10 +67,10 @@ def main():
     """.format(first, second, third, fourth))
     #Logic OR
     weights = np.array([logic['logic_or'][w] for w in logic['logic_or'].keys()])
-    first = perceptron(weights, logic['bias'], dataset[0])
-    second = perceptron(weights, logic['bias'], dataset[1])
-    third = perceptron(weights, logic['bias'], dataset[2])
-    fourth = perceptron(weights, logic['bias'], dataset[3])
+    first = perceptron(weights, logic['bias'][0], dataset[0])
+    second = perceptron(weights, logic['bias'][0], dataset[1])
+    third = perceptron(weights, logic['bias'][0], dataset[2])
+    fourth = perceptron(weights, logic['bias'][0], dataset[3])
     print("""
     Logic OR:
     0 0 \t {}
@@ -79,10 +79,10 @@ def main():
     1 1 \t {}
     """.format(first, second, third, fourth))
     weights = np.array([logic['logic_or'][w] for w in logic['logic_or'].keys()])
-    first = perceptron(weights, logic['bias'], dataset[0])
-    second = perceptron(weights, logic['bias'], dataset[1])
-    third = perceptron(weights, logic['bias'], dataset[2])
-    fourth = perceptron(weights, logic['bias'], dataset[3])
+    first = perceptron(weights, logic['bias'][0], dataset[0])
+    second = perceptron(weights, logic['bias'][0], dataset[1])
+    third = perceptron(weights, logic['bias'][0], dataset[2])
+    fourth = perceptron(weights, logic['bias'][0], dataset[3])
     print("""
     Logic OR:
     0 0 \t {}
@@ -90,6 +90,15 @@ def main():
     1 0 \t {}
     1 1 \t {}
     """.format(first, second, third, fourth))
+    weights = np.array([ logic['logic_not'][w] for w in logic['logic_not'].keys()])
+    first = perceptron(weights, logic['bias'][0], [1,0])
+    second = perceptron(weights, logic['bias'][0], [0,1])
+    print("""
+    Logic NOT:
+    0 \t {}
+    1 \t {}
+    """.format(first, second))
+
 
 
 if __name__ == '__main__':
