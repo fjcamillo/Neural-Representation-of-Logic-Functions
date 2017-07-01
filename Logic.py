@@ -73,8 +73,15 @@ def main():
     logic_nand = compute('logic_nand', logic, dataset)
     logic_nor = compute('logic_nor', logic, dataset)
 
-    def template(data, name):
+    def template(dataset, name, data):
         print("Logic Function: {}".format(name[6:]))
+        print("W0\tW1\tW2\tY")
+        toPrint = ["{1}\t{2}\t{3}\t{0}".format(output, *datas) for datas, output in zip(dataset, data)]
+        for i in toPrint:
+            print(i)
+
+    for i in zip(logic_and, logic_or, logic_xor, logic_not, logic_xnor, logic_nand, logic_nor):
+        template(dataset, *i)
 
     # print("""
     # Logic XOR:
