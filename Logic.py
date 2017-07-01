@@ -27,18 +27,18 @@ def main():
             'w2': 0.7
         },
         'logic_not': {
-            'w0': 10,
-            'w1': 10
+            'w0': 0.5,
+            'w1': -0.7
         },
         'logic_nand': {
-            'w0': -5,
-            'w1': 20,
-            'w2': 10
+            'w0': 0.6,
+            'w1': -0.8,
+            'w2': -0.8
         },
         'logic_nor': {
-            'w0': -5,
-            'w1': 20,
-            'w2': 10
+            'w0': 0.5,
+            'w1': -0.7,
+            'w2': -0.7
         },
         'logic_xor': {
             'w0': -5,
@@ -53,11 +53,11 @@ def main():
         'bias': {
             'logic_and': -0.2,
             'logic_or': -0.1,
-            'logic_not': 1,
+            'logic_not': 0.1,
             'logic_xor': 1,
             'logic_xnor': 1,
-            'logic_nand': 1,
-            'logic_nor': 1
+            'logic_nand': 0.3,
+            'logic_nor': 0.1
         }
     }
     dataset = np.array([
