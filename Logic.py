@@ -22,9 +22,9 @@ def main():
             'w2': 0.2
         },
         'logic_or': {
-            'w0': -5,
-            'w1': 20,
-            'w2': 10
+            'w0': -0.1,
+            'w1': 0.7,
+            'w2': 0.7
         },
         'logic_not': {
             'w0': 10,
@@ -52,7 +52,7 @@ def main():
         },
         'bias': {
             'logic_and': -0.2,
-            'logic_or': 1,
+            'logic_or': -0.1,
             'logic_not': 1,
             'logic_xor': 1,
             'logic_xnor': 1,
@@ -78,7 +78,7 @@ def main():
     def template(dataset, name, data):
         # act = name[6:]
         print("Logic Function: {}".format(name[6:]))
-        print("W0\tW1\tW2\tY")
+        print("X0\tX1\tX2\tY")
         toPrint = ["{1}\t{2}\t{3}\t{0}".format(output, *datas) for datas, output in zip(dataset, data)]
         for i in toPrint:
             print(i)
