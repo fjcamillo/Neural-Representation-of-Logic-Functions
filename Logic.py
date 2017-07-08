@@ -4,7 +4,7 @@ from functools import reduce
 
 def perceptron(weight, bias, x):
     model = np.add(np.dot(x, weight), bias)
-    logit = 1/(1+np.exp(-1*model))
+    logit = 1/(1+np.exp(-model))
     print('Type: {}'.format(logit))
     return np.round(logit)
 
