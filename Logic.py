@@ -71,10 +71,10 @@ def main():
     logic_and = compute('logic_and', logic, dataset)
     logic_or = compute('logic_or', logic, dataset)
     logic_not = compute('logic_not', logic, [[1,0],[1,1]])
-    logic_xor = compute('logic_xor', logic, dataset)
-    logic_xnor = compute('logic_xnor', logic, dataset)
     logic_nand = compute('logic_nand', logic, dataset)
     logic_nor = compute('logic_nor', logic, dataset)
+    # logic_xor = compute('logic_xor', logic, dataset)
+    # logic_xnor = compute('logic_xnor', logic, dataset)
 
     def template(dataset, name, data):
         # act = name[6:]
@@ -84,7 +84,7 @@ def main():
         for i in toPrint:
             print(i)
 
-    gates = [logic_and, logic_or, logic_xor, logic_not, logic_xnor, logic_nand, logic_nor]
+    gates = [logic_and, logic_or, logic_not, logic_nand, logic_nor]
 
     for i in gates:
         template(dataset, *i)
