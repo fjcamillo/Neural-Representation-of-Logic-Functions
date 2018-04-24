@@ -10,6 +10,6 @@ class NeuralLogic:
 
     def perceptron(self):
         model = self.weights.transpose().dot(self.x) + self.bias
-        logit = 1/(1+np.exp(-model()))
+        logit = 1/(1+np.exp(-model))
         return logit
 
