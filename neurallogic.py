@@ -13,3 +13,8 @@ class NeuralLogic:
         logit = 1/(1+np.exp(-model))
         return logit
 
+    def __wshape__(self):
+        return self.weights.shape
+
+    def __xshape__(self):
+        return self.x.shape
